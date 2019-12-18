@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Convertor</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="menu">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="logo">
+                        <span>FAST CONVERTER</span>
+                    </div>
+                    <p>Конвертер валют</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <!-- Верхний блок под рекламму, расположен по всей ширине конттеннера -->
+                <div class="col-md-12 top-banner"></div>
+                <!-- Левый баненер с рекламой -->
+                <div class="col-md-2 left-banner"></div>
+                <!-- Сам конвертор -->
+                <div class="col-md-8 no-padding">
+                    <div class="calc-side">
+                        <div class="col-md-5 first-curency">
+                            <span>У меня в наличии:</span>
+                            <div class="calc-switcher">
+                                <div class="calc-switcher-item active" title="RUB">
+                                    RUB
+                                </div>
+                                <div class="calc-switcher-item">
+                                    USD
+                                </div>
+                                <div class="calc-switcher-item">
+                                    EUR
+                                </div>
+                            </div>
+                            <div class="value-field">
+                                <input type="number" placeholder="1000">
+                            </div>
+                            <div class="description">
+                                <p>
+                                    Быстрый конвертер валют онлайн - инструмент,
+                                    который дает возможность быстро расчитывать
+                                    соотношение актуальных курсов валют.
+                                </p>
+                                <p>
+                                    Все данные валют автоматически
+                                    обновляются ежеминутно.
+                                </p>
+                                <p>
+                                    Благодаря нашему конвертеру вы можете
+                                    расчитать соотношение таких валют как:
+                                    Российский рубль, Доллар США, ЕВРО,
+                                    Фунт стерлингов, Австралийский доллар,
+                                    Белорусский рубль, Китайский юань,
+                                    Норвежская крона, Украинская гривна,
+                                    Швейцарский франк, Южноафриканский рэнд,
+                                    Японская иена и другие валюты мира.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 replace-button">
+                            <button><img src="img/replace-utton.svg" alt="replace-button"></button>
+                        </div>
+                        <div class="col-md-5 second-curency">
+                            <span>Необходимо купить:</span>
+                            <div class="calc-switcher">
+                                <div class="calc-switcher-item" id="num-1">
+                                    RUB
+                                </div>
+                                <div class="calc-switcher-item active" id="num-2">
+                                    USD
+                                </div>
+                                <div class="calc-switcher-item">
+                                    EUR
+                                </div>
+                            </div>
+                            <div class="value-field" id="value-convert">
+
+                            </div>
+                            <div class="description info text-right">
+                                Данные за 2019-12-16 12:38:12 GMT+03:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Правый баненер с рекламой -->
+                <div class="col-md-2 right-banner"></div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
