@@ -8,6 +8,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #000000;
+    overflow-x: hidden;
 }
 
 input:focus, button:focus {
@@ -47,6 +48,7 @@ header .menu {
     justify-content: space-between;
     width: 100%;
     font-weight: 400;
+    padding: 0 25px;
 }
 
 header .menu .logo {
@@ -64,6 +66,9 @@ header .menu .logo span {
 }
 
 /* BANNERS */
+.banner {
+    opacity: 0;
+}
 
 .top-banner {
     width: 100%;
@@ -73,6 +78,7 @@ header .menu .logo span {
     border-radius: 3px;
     padding: 0;
     margin-bottom: 19px;
+    display: none;
 }
 
 .left-banner, .right-banner {
@@ -127,12 +133,36 @@ header .menu .logo span {
     cursor: pointer;
 }
 
+.calc-switcher-item:hover::after { 
+    content: attr(data-title); 
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    color: #666;
+    background: #fff; /* Полупрозрачный цвет фона */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 7px 14px; /* Поля */
+    border-radius: 3px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-transform: none;
+}
+
+#from-select {
+    display: none;
+}
+
+#to-select {
+    display: none;
+}
+
 .value-field  {
     width: 100%;
     padding: 40px 30px;
     border: 1px solid #8F8F8F;
     border-radius: 5px;
     margin-bottom: 19px;
+    font-size: 29px;
+    font-weight: 700;
 }
 
 .value-field input {
@@ -140,6 +170,12 @@ header .menu .logo span {
     font-size: 29px;
     font-weight: 700;
     border: none;
+}
+
+.value-field p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #707070;
 }
 
 #value-convert {

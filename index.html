@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
+    <link rel="shortcut icon" href="img/whh_circleloadersix.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,10 +13,10 @@
     <title>Convertor</title>
 </head>
 
-<body>
+<body onload="convertCurrency();">
     <header>
-        <div class="container">
-            <div class="row">
+        <div class="">
+            <div class="">
                 <div class="menu">
                     <div class="logo">
                         <img src="img/logo.svg" alt="logo">
@@ -29,30 +28,36 @@
         </div>
     </header>
     <div class="main">
-        <div class="container">
+        <div class="">
             <div class="row">
                 <!-- Верхний блок под рекламму, расположен по всей ширине конттеннера -->
-                <div class="col-md-12 top-banner"></div>
+                <div class="col-md-12 top-banner banner"></div>
                 <!-- Левый баненер с рекламой -->
-                <div class="col-md-2 left-banner"></div>
+                <div class="col-md-2 left-banner banner"></div>
                 <!-- Сам конвертор -->
                 <div class="col-md-8 no-padding">
                     <div class="calc-side">
                         <div class="col-md-5 first-curency">
                             <span>У меня в наличии:</span>
                             <div class="calc-switcher">
-                                <div class="calc-switcher-item active" title="RUB">
+                                <div class="calc-switcher-item active" data-title="Российский рубль" id="from-RUB">
                                     RUB
                                 </div>
-                                <div class="calc-switcher-item">
+                                <div class="calc-switcher-item" data-title="Доллар США" id="from-USD">
                                     USD
                                 </div>
-                                <div class="calc-switcher-item">
-                                    EUR
+                                <div class="calc-switcher-item" data-title="Японская йена" id="from-JPY">
+                                    JPY
                                 </div>
                             </div>
+                            <select id="from-select">
+                                <option value="RUB">Российский рубль</option>
+                                <option value="USD">Доллар США</option>
+                                <option value="JPY">Японская йена</option>
+                            </select>
                             <div class="value-field">
-                                <input type="number" placeholder="1000">
+                                <input id="from" type="number" placeholder="1000" oninput="convertCurrency();">
+                                <p>1 RUR = 0.016 USD</p>
                             </div>
                             <div class="description">
                                 <p>
@@ -78,37 +83,45 @@
 
                         </div>
                         <div class="col-md-2 replace-button">
-                            <button><img src="img/replace-utton.svg" alt="replace-button"></button>
+                            <button id="convert"><img src="img/replace-utton.svg" alt="replace-button"></button>
                         </div>
                         <div class="col-md-5 second-curency">
                             <span>Необходимо купить:</span>
                             <div class="calc-switcher">
-                                <div class="calc-switcher-item" id="num-1">
+                                <div class="calc-switcher-item active" data-title="Российский рубль" id="to-RUB">
                                     RUB
                                 </div>
-                                <div class="calc-switcher-item active" id="num-2">
+                                <div class="calc-switcher-item" data-title="Доллар США" id="to-USD">
                                     USD
                                 </div>
-                                <div class="calc-switcher-item">
-                                    EUR
+                                <div class="calc-switcher-item" data-title="Японская йена" id="to-JPY">
+                                    JPY
                                 </div>
                             </div>
-                            <div class="value-field" id="value-convert">
-
+                            <select id="to-select">
+                                <option value="RUB">Российский рубль</option>
+                                <option value="USD">Доллар США</option>
+                                <option value="JPY">Японская йена</option>
+                            </select>
+                            <div class="value-field">
+                                <input id="to" type="number" placeholder="" readonly>
+                                <p>1 RUR = 0.016 USD</p>
                             </div>
-                            <div class="description info text-right">
-                                Данные за 2019-12-16 12:38:12 GMT+03:00
+                            <div class="description info text-right" id="date">
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Правый баненер с рекламой -->
-                <div class="col-md-2 right-banner"></div>
+                <div class="col-md-2 right-banner banner"></div>
             </div>
         </div>
     </div>
     <footer></footer>
+    <script src="https://www.cbr-xml-daily.ru/daily_jsonp.js" async></script>
     <script src="js/script.js"></script>
+    <!-- <script src="js/dom.js" type="module"></script> -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 
