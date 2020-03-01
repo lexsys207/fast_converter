@@ -1,7 +1,14 @@
 //  PARSER 2 - - - API - - -
 function convertCurrency() {
-    var from_valute = document.getElementById("from-select").value;
-    var to_valute = document.getElementById("to-select").value;
+    // Курс валюты за единицу from
+    var from_first_name = document.getElementById("from-first-name");
+    var from_first_unit = document.getElementById("from-first-unit");
+    var from_second_name = document.getElementById("from-second-name");
+    // Курс валюты за единицу to
+    var to_first_name = document.getElementById("to-first-name");
+    var to_first_unit = document.getElementById("to-first-unit");
+    var to_second_name = document.getElementById("to-second-name");
+
     // Кнопки "У меня в наличии"
     var from_rub = document.getElementById("from-RUB");
     var from_usd = document.getElementById("from-USD");
@@ -53,10 +60,19 @@ function convertCurrency() {
         convertCurrency();
     }
     // КОНВЕРТЕР
+    var from_valute = document.getElementById("from-select").value;
+    var to_valute = document.getElementById("to-select").value;
     var xmlhttp = new XMLHttpRequest();
     var url = "https://api.exchangeratesapi.io/latest?symbols=" + from_valute + "," + to_valute;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+    // Курс валюты за единицу from
+    from_first_name.innerHTML = from_valute;
+    from_second_name.innerHTML = to_valute;
+    // Курс валюты за единицу to
+    to_first_name.innerHTML = to_valute;
+    to_second_name.innerHTML = from_valute;
+
     xmlhttp.onreadystatechange = function () {
         // парсер и конвретация
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -65,6 +81,13 @@ function convertCurrency() {
             var oneUnit = jsResult.rates[to_valute] / jsResult.rates[from_valute];
             var from = document.getElementById("from").value;
             var to = document.getElementById("to").value = (oneUnit * from).toFixed(2);
+            from_first_unit.innerHTML = (jsResult.rates[to_valute] / jsResult.rates[from_valute]).toFixed(3);
+            to_first_unit.innerHTML = (jsResult.rates[from_valute] / jsResult.rates[to_valute]).toFixed(3);
+            // Парсим дату актуальных курсов валют и выводим на страницу
+            var date_url = JSON.parse(result);
+            var date = document.getElementById("date");
+            date.innerHTML = "Данные за " + date_url.date;
+            console.log(date_url.date);
         }
     }
 }

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://kit.fontawesome.com/0019c10cab.js" crossorigin="anonymous"></script>
+
     <title>Convertor</title>
 </head>
 
@@ -38,7 +40,7 @@
                 <div class="col-md-8 no-padding">
                     <div class="calc-side">
                         <div class="col-md-5 first-curency">
-                            <span>У меня в наличии:</span>
+                            <!-- У меня в наличии -->
                             <div class="calc-switcher">
                                 <div class="calc-switcher-item active" data-title="Российский рубль" id="from-RUB">
                                     RUB
@@ -49,15 +51,30 @@
                                 <div class="calc-switcher-item" data-title="Японская йена" id="from-JPY">
                                     JPY
                                 </div>
+                                <div class="calc-switcher-item" data-title="Выбрать валюту" id="from-list">
+                                    <span id="from-list-name">NaN</span>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
                             </div>
                             <select id="from-select">
                                 <option value="RUB">Российский рубль</option>
                                 <option value="USD">Доллар США</option>
+                                <option value="EUR">Евро</option>
                                 <option value="JPY">Японская йена</option>
+                                <option value="GBP">Фунт стерлингов</option>
+                                <option value="AUD">Австралийский доллар</option>
+                                <option value="AZN">Айзебаржанский доллар</option>
+                                <option value="AMD">Армянский драм</option>
+                                <option value="BYN">Белорусский рубль</option>
+                                <option value="BGN">Болгарский лев</option>
+                                <option value="BRL">Бразильский реал</option>
+                                <option value="HUF">Венгерский форинт</option>
+
                             </select>
                             <div class="value-field">
                                 <input id="from" type="number" placeholder="1000" oninput="convertCurrency();">
-                                <p>1 RUR = 0.016 USD</p>
+                                <p>1 <span id="from-first-name"></span> = <span id="from-first-unit"></span> <span
+                                        id="from-second-name"> </span></p>
                             </div>
                             <div class="description">
                                 <p>
@@ -86,7 +103,7 @@
                             <button id="convert"><img src="img/replace-utton.svg" alt="replace-button"></button>
                         </div>
                         <div class="col-md-5 second-curency">
-                            <span>Необходимо купить:</span>
+                            <!-- Необходимо купить: -->
                             <div class="calc-switcher">
                                 <div class="calc-switcher-item active" data-title="Российский рубль" id="to-RUB">
                                     RUB
@@ -101,11 +118,21 @@
                             <select id="to-select">
                                 <option value="RUB">Российский рубль</option>
                                 <option value="USD">Доллар США</option>
+                                <option value="EUR">Евро</option>
                                 <option value="JPY">Японская йена</option>
+                                <option value="GBP">Фунт стерлингов</option>
+                                <option value="AUD">Австралийский доллар</option>
+                                <option value="AZN">Айзебаржанский доллар</option>
+                                <option value="AMD">Армянский драм</option>
+                                <option value="BYN">Белорусский рубль</option>
+                                <option value="BGN">Болгарский лев</option>
+                                <option value="BRL">Бразильский реал</option>
+                                <option value="HUF">Венгерский форинт</option>
                             </select>
                             <div class="value-field">
                                 <input id="to" type="number" placeholder="" readonly>
-                                <p>1 RUR = 0.016 USD</p>
+                                <p>1 <span id="to-first-name"></span> = <span id="to-first-unit"> </span> <span
+                                        id="to-second-name"></span></p>
                             </div>
                             <div class="description info text-right" id="date">
 

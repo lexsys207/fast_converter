@@ -136,7 +136,8 @@ header .menu .logo span {
 .calc-switcher-item:hover::after { 
     content: attr(data-title); 
     position: absolute; /* Абсолютное позиционирование */
-    top: 0;
+    top: -25px;
+    margin-left: -80px;
     z-index: 1; /* Отображаем подсказку поверх других элементов */
     color: #666;
     background: #fff; /* Полупрозрачный цвет фона */
@@ -145,6 +146,14 @@ header .menu .logo span {
     border-radius: 3px; 
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     text-transform: none;
+}
+
+/*------------------------
+    Кнопки списка валют
+------------------------*/
+#from-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 #from-select {
