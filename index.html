@@ -37,9 +37,9 @@
                 <!-- Левый баненер с рекламой -->
                 <div class="col-md-2 left-banner banner"></div>
                 <!-- Сам конвертор -->
-                <div class="col-md-8 no-padding">
+                <div class="col-md-8 col-12 no-padding">
                     <div class="calc-side">
-                        <div class="col-md-5 first-curency">
+                        <div class="col-md-5 col-12 no-padding first-curency">
                             <!-- У меня в наличии -->
                             <div class="calc-switcher">
                                 <div class="calc-switcher-item active" data-title="Российский рубль" id="from-RUB">
@@ -69,7 +69,27 @@
                                 <option value="BGN">Болгарский лев</option>
                                 <option value="BRL">Бразильский реал</option>
                                 <option value="HUF">Венгерский форинт</option>
-
+                                <option value="KRW">Вон Республики Корея</option>
+                                <option value="DKK">Датская крона</option>
+                                <option value="INR">Индийская рупия</option>
+                                <option value="KZT">Казахстанский тенге</option>
+                                <option value="CAD">Канадский доллар</option>
+                                <option value="KGS">Киргизский сом</option>
+                                <option value="CNY">Китайский юань</option>
+                                <option value="MDL">Молдавский лей</option>
+                                <option value="RON">Новый румынский лей</option>
+                                <option value="TMT">Новый туркменский манат</option>
+                                <option value="NOK">Норвежская крона</option>
+                                <option value="PLN">Польсктй злотый</option>
+                                <option value="SGD">Сингапурский доллар</option>
+                                <option value="TJS">Таджикский сомони</option>
+                                <option value="TRY">Турецкая лира</option>
+                                <option value="UZS">Узбекский сум</option>
+                                <option value="UAH">Украинская гривна</option>
+                                <option value="CZK">Чешская крона</option>
+                                <option value="SEK">Шведская крона</option>
+                                <option value="CHF">Швейцарский франк</option>
+                                <option value="ZAR">Южноафриканский рэнд</option>
                             </select>
                             <div class="value-field">
                                 <input id="from" type="number" placeholder="1000" oninput="convertCurrency();">
@@ -99,10 +119,10 @@
                             </div>
 
                         </div>
-                        <div class="col-md-2 replace-button">
+                        <div class="col-md-2 col-12 no-padding replace-button">
                             <button id="convert"><img src="img/replace-utton.svg" alt="replace-button"></button>
                         </div>
-                        <div class="col-md-5 second-curency">
+                        <div class="col-md-5 col-12 no-padding second-curency">
                             <!-- Необходимо купить: -->
                             <div class="calc-switcher">
                                 <div class="calc-switcher-item active" data-title="Российский рубль" id="to-RUB">
@@ -113,6 +133,10 @@
                                 </div>
                                 <div class="calc-switcher-item" data-title="Японская йена" id="to-JPY">
                                     JPY
+                                </div>
+                                <div class="calc-switcher-item" data-title="Выбрать валюту" id="to-list">
+                                    <span id="to-list-name">NaN</span>
+                                    <i class="fas fa-sort-down"></i>
                                 </div>
                             </div>
                             <select id="to-select">
@@ -128,6 +152,28 @@
                                 <option value="BGN">Болгарский лев</option>
                                 <option value="BRL">Бразильский реал</option>
                                 <option value="HUF">Венгерский форинт</option>
+                                <option value="KRW">Вон Республики Корея</option>
+                                <option value="DKK">Датская крона</option>
+                                <option value="INR">Индийская рупия</option>
+                                <option value="KZT">Казахстанский тенге</option>
+                                <option value="CAD">Канадский доллар</option>
+                                <option value="KGS">Киргизский сом</option>
+                                <option value="CNY">Китайский юань</option>
+                                <option value="MDL">Молдавский лей</option>
+                                <option value="RON">Новый румынский лей</option>
+                                <option value="TMT">Новый туркменский манат</option>
+                                <option value="NOK">Норвежская крона</option>
+                                <option value="PLN">Польсктй злотый</option>
+                                <option value="SGD">Сингапурский доллар</option>
+                                <option value="TJS">Таджикский сомони</option>
+                                <option value="TRY">Турецкая лира</option>
+                                <option value="UZS">Узбекский сум</option>
+                                <option value="UAH">Украинская гривна</option>
+                                <option value="CZK">Чешская крона</option>
+                                <option value="SEK">Шведская крона</option>
+                                <option value="CHF">Швейцарский франк</option>
+                                <option value="ZAR">Южноафриканский рэнд</option>
+
                             </select>
                             <div class="value-field">
                                 <input id="to" type="number" placeholder="" readonly>
@@ -141,11 +187,435 @@
                     </div>
                 </div>
                 <!-- Правый баненер с рекламой -->
-                <div class="col-md-2 right-banner banner"></div>
+                <div class="col-md-2 col-12 right-banner banner"></div>
             </div>
         </div>
     </div>
     <footer></footer>
+    <div class="all-curency-window" id="from-all-curency-window">
+        <div>
+            <ul>
+                <li>
+                    <button name="d" value="RUB">
+                        <span>Российский рубль</span>
+                        <span>RUR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="USD">
+                        <span>Доллар США</span>
+                        <span>USD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="EUR">
+                        <span>ЕВРО</span>
+                        <span>EUR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="GBP">
+                        <span>Фунт стерлингов</span>
+                        <span>GBP</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="AUD">
+                        <span>Австралийский доллар</span>
+                        <span>AUD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="AZN">
+                        <span>Азербайджанский доллар</span>
+                        <span>AZN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="AMD">
+                        <span>Армянский драм</span>
+                        <span>AMD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="BYN">
+                        <span>Белорусский рубль</span>
+                        <span>BYN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="BGN">
+                        <span>Болгарский лев</span>
+                        <span>BGN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="BRL">
+                        <span>Бразильский реал</span>
+                        <span>BRL</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="HUF">
+                        <span>Венгерский форинт</span>
+                        <span>HUF</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <button name="d" value="KRW">
+                        <span>Вон Республики Корея</span>
+                        <span>KRW</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="DKK">
+                        <span>Датская крона</span>
+                        <span>DKK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="INR">
+                        <span>Индийская рупия</span>
+                        <span>INR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="KZT">
+                        <span>Казахстанский тенге</span>
+                        <span>KZT</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="CAD">
+                        <span>Канадский доллар</span>
+                        <span>CAD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="KGS">
+                        <span>Киргизский сом</span>
+                        <span>KGS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="CNY">
+                        <span>Китайский юань</span>
+                        <span>CNY</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="MDL">
+                        <span>Молдавский лей</span>
+                        <span>MDL</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="RON">
+                        <span>Новый румынский лей</span>
+                        <span>RON</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="TMT">
+                        <span>Новый туркменский манат</span>
+                        <span>TMT</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="NOK">
+                        <span>Норвежская крона</span>
+                        <span>NOK</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <button name="d" value="PLN">
+                        <span>Польсктй злотый</span>
+                        <span>PLN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="SGD">
+                        <span>Сингапурский доллар</span>
+                        <span>SGD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="TJS">
+                        <span>Таджикский сомони</span>
+                        <span>TJS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="TRY">
+                        <span>Турецкая лира</span>
+                        <span>TRY</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="UZS">
+                        <span>Узбекский сум</span>
+                        <span>UZS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="UAH">
+                        <span>Украинская гривна</span>
+                        <span>UAH</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="CZK">
+                        <span>Чешская крона</span>
+                        <span>CZK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="SEK">
+                        <span>Шведская крона</span>
+                        <span>SEK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="CHF">
+                        <span>Швейцарский франк</span>
+                        <span>CHF</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="ZAR">
+                        <span>Южноафриканский рэнд</span>
+                        <span>ZAR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="JPY">
+                        <span>Японская иена</span>
+                        <span>JPY</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="all-curency-window" id="to-all-curency-window">
+        <div>
+            <ul>
+                <li>
+                    <button name="a" value="RUB">
+                        <span>Российский рубль</span>
+                        <span>RUR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="USD">
+                        <span>Доллар США</span>
+                        <span>USD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="EUR">
+                        <span>ЕВРО</span>
+                        <span>EUR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="GBP">
+                        <span>Фунт стерлингов</span>
+                        <span>GBP</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="AUD">
+                        <span>Австралийский доллар</span>
+                        <span>AUD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="AZN">
+                        <span>Азербайджанский доллар</span>
+                        <span>AZN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="AMD">
+                        <span>Армянский драм</span>
+                        <span>AMD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="BYN">
+                        <span>Белорусский рубль</span>
+                        <span>BYN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="BGN">
+                        <span>Болгарский лев</span>
+                        <span>BGN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="BRL">
+                        <span>Бразильский реал</span>
+                        <span>BRL</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="HUF">
+                        <span>Венгерский форинт</span>
+                        <span>HUF</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <button name="a" value="KRW">
+                        <span>Вон Республики Корея</span>
+                        <span>KRW</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="DKK">
+                        <span>Датская крона</span>
+                        <span>DKK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="INR">
+                        <span>Индийская рупия</span>
+                        <span>INR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="KZT">
+                        <span>Казахстанский тенге</span>
+                        <span>KZT</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="CAD">
+                        <span>Канадский доллар</span>
+                        <span>CAD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="KGS">
+                        <span>Киргизский сом</span>
+                        <span>KGS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="CNY">
+                        <span>Китайский юань</span>
+                        <span>CNY</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="MDL">
+                        <span>Молдавский лей</span>
+                        <span>MDL</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="RON">
+                        <span>Новый румынский лей</span>
+                        <span>RON</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="TMT">
+                        <span>Новый туркменский манат</span>
+                        <span>TMT</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="NOK">
+                        <span>Норвежская крона</span>
+                        <span>NOK</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <button name="a" value="PLN">
+                        <span>Польсктй злотый</span>
+                        <span>PLN</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="SGD">
+                        <span>Сингапурский доллар</span>
+                        <span>SGD</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="TJS">
+                        <span>Таджикский сомони</span>
+                        <span>TJS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="TRY">
+                        <span>Турецкая лира</span>
+                        <span>TRY</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="UZS">
+                        <span>Узбекский сум</span>
+                        <span>UZS</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="UAH">
+                        <span>Украинская гривна</span>
+                        <span>UAH</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="CZK">
+                        <span>Чешская крона</span>
+                        <span>CZK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="d" value="SEK">
+                        <span>Шведская крона</span>
+                        <span>SEK</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="CHF">
+                        <span>Швейцарский франк</span>
+                        <span>CHF</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="ZAR">
+                        <span>Южноафриканский рэнд</span>
+                        <span>ZAR</span>
+                    </button>
+                </li>
+                <li>
+                    <button name="a" value="JPY">
+                        <span>Японская иена</span>
+                        <span>JPY</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
     <script src="https://www.cbr-xml-daily.ru/daily_jsonp.js" async></script>
     <script src="js/script.js"></script>
     <!-- <script src="js/dom.js" type="module"></script> -->
