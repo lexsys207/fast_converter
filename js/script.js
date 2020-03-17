@@ -5,6 +5,14 @@ function convertCurrency() {
     var to_list = document.getElementById("to-list");
     var from_all_curency_window = document.getElementById("from-all-curency-window");
     var to_all_curency_window = document.getElementById("to-all-curency-window");
+    // Закрытие списка валют
+    var overlay = document.getElementById("overlay");
+
+    overlay.onclick = function () {
+        from_all_curency_window.classList.remove('active');
+        to_all_curency_window.classList.remove('active');
+        overlay.classList.remove('active');
+    }
     // Выбор из списка валют from
     var list = document.querySelectorAll("button[name=d]");
 
@@ -14,10 +22,12 @@ function convertCurrency() {
             list.forEach(c => {
                 c.classList.remove('active');
             });
+
             this.classList.add('active');
             let from_list_val = this.value;
             document.getElementById("from-list-name").innerHTML = from_list_val;
             document.getElementById("from-select").value = from_list_val;
+            convertCurrency();
         });
     }
 
@@ -33,9 +43,9 @@ function convertCurrency() {
             let to_list_val = this.value;
             document.getElementById("to-list-name").innerHTML = to_list_val;
             document.getElementById("to-select").value = to_list_val;
+            convertCurrency();
         });
     }
-
     // Курс валюты за единицу from
     var from_first_name = document.getElementById("from-first-name");
     var from_first_unit = document.getElementById("from-first-unit");
@@ -83,6 +93,7 @@ function convertCurrency() {
         from_jpy.classList.remove('active');
         from_list.classList.add('active');
         from_all_curency_window.classList.toggle('active');
+        overlay.classList.add('active');
         convertCurrency();
     }
 
@@ -124,6 +135,7 @@ function convertCurrency() {
         to_jpy.classList.remove('active');
         to_list.classList.add('active');
         to_all_curency_window.classList.toggle('active');
+        overlay.classList.add('active');
         convertCurrency();
     }
 

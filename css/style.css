@@ -92,7 +92,7 @@ header .menu .logo span {
 }
 
 /* curency */
-.first-curency .description, .second-curency .description {
+.description {
     font-weight: 400;
     color: #707070;
 }
@@ -155,6 +155,11 @@ header .menu .logo span {
     Кнопки списка валют
 ------------------------*/
 #from-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#to-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -232,6 +237,7 @@ header .menu .logo span {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     display: none;
+    z-index: 999;
 }
 
 .all-curency-window.active {
@@ -267,6 +273,22 @@ header .menu .logo span {
     font-weight: 300;
 }
 
+#overlay {
+    display: none;
+}
+
+#overlay.active {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 
@@ -290,12 +312,12 @@ header .menu .logo span {
     header .menu {
         padding: 0 10px;
     }
+    header .menu p {
+        display: none;
+    }
     .calc-side {
         display: block;
         padding: 0px 20px;
-    }
-    .first-curency .description, .second-curency .description {
-        display: none;
     }
     .replace-button button {
         margin: 0;
@@ -311,8 +333,9 @@ header .menu .logo span {
     }
     .all-curency-window {
         grid-template-columns: repeat(1, 1fr);
-        margin-left: 17px;
-        margin-top: 150px;
+        margin: 0px 5px;
+        margin-top: 145px;
+        width: 97%;
         top: 0%;
         left: 0%;
         overflow-y: scroll;
@@ -321,6 +344,18 @@ header .menu .logo span {
     ul {
         margin: 0;
         padding: 0;
+    }
+    .value-field input {
+        text-align: center;
+    }
+    .value-field p {
+        text-align: center;
+    }
+    .first-curency .description, .second-curency .description {
+        display: none;
+    } 
+    .description {
+        padding: 20px;
     }
 }
 
@@ -335,12 +370,12 @@ header .menu .logo span {
     header .menu .logo {
         grid-template-columns: 20px 180px;
     }
+    header .menu p {
+        display: none;
+    }
     .calc-side {
         display: block;
         padding: 0px 20px;
-    }
-    .first-curency .description, .second-curency .description {
-        display: none;
     }
     .replace-button button {
         margin: 0;
@@ -357,6 +392,18 @@ header .menu .logo span {
     ul {
         margin: 0;
         padding: 0;
+    }
+    .value-field input {
+        text-align: center;
+    }
+    .value-field p {
+        text-align: center;
+    }
+    .first-curency.description, .second-curency.description {
+        display: none;
+    } 
+    .description {
+        padding: 20px;
     }
 }
 
@@ -368,12 +415,12 @@ header .menu .logo span {
     header .menu {
         padding: 0 5px;
     }
+    header .menu p {
+        display: none;
+    }
     .calc-side {
         display: block;
         padding: 0px 20px;
-    }
-    .first-curency .description, .second-curency .description {
-        display: none;
     }
     .replace-button button {
         margin: 0;
@@ -390,5 +437,17 @@ header .menu .logo span {
     ul {
         margin: 0;
         padding: 0;
+    }
+    .value-field input {
+        text-align: center;
+    }
+    .value-field p {
+        text-align: center;
+    }
+    .first-curency.description, .second-curency.description {
+        display: none;
+    } 
+    .description {
+        padding: 20px;
     }
 }
