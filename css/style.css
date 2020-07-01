@@ -33,7 +33,7 @@ footer {
     padding: 15px 0;
     background-color: #1C283F;
     color: #fff;
-    position: relative;
+    position: absolute;
     bottom: 0;
 }
 
@@ -59,8 +59,11 @@ header .menu .logo {
     grid-template-columns: 20px 200px;
 }
 
-header .menu .logo span {
+header .menu .logo h1 {
     padding-left: 10px; 
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 .main {
